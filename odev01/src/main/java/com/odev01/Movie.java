@@ -1,20 +1,24 @@
 package com.odev01;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import org.sonatype.inject.Nullable;
+
+import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 
 @Table(name = "Movie")
 @Entity
 public class Movie {
 
+    @OneToMany()
     @Column(name = "movie_Id") @Id
     private Long movie_id;
 
+    @NotNull
     @Column(name = "movie_name")
     private String movie_name;
 
+
+    @Nullable
     @Column(name = "movie_year")
     private Long movie_year;
 

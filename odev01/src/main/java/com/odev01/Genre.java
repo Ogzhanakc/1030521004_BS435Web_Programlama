@@ -1,16 +1,18 @@
 package com.odev01;
 
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 
 @Entity
 public class Genre {
+
+
     @Column(name = "genre_Id") @Id @GeneratedValue
     private Long genre_id;
 
+
+    @NotNull
     @Column(name = "genre_name")
     private String genre_name;
 
